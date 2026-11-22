@@ -25,7 +25,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install fastapi pydantic pytest uvicorn httpx
+        pip install -r requirements.txt
 
     # 4️⃣ Run tests
     - name: Run pytest
@@ -34,4 +34,4 @@ jobs:
     # 5️⃣ Optional: Deploy FastAPI (example)
     - name: Run FastAPI app
       run: |
-        nohup uvicorn main:api --host 0.0.0.0 --port 8000 &
+        nohup uvicorn main:app --host 0.0.0.0 --port 8000 &
